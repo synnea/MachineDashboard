@@ -1,0 +1,1131 @@
+{
+  "machines": [
+    {
+      "id": "660324",
+      "name": "NC-Drehen",
+      "type": "MACH",
+      "location": {
+        "lat": 51.683334,
+        "lon": 7.816667
+      },
+      "contact": {
+        "name": "Nina Jansen",
+        "phone": "+491555558764"
+      },
+      "live_data": {
+        "state": "Maintenance",
+        "current_consumption": 0.0,
+        "current_consumption_unit": "A",
+        "temperature": 6.46,
+        "plc_alarm": true
+      }
+    },
+    {
+      "id": "660323",
+      "name": "NC-Drehen-Bohren",
+      "type": "MACH",
+      "location": {
+        "lat": 49.233334,
+        "lon": 7.0
+      },
+      "contact": {
+        "name": "Nina Jansen",
+        "phone": "+491555558764"
+      },
+      "live_data": {
+        "state": "Cleaning",
+        "current_consumption": 2.97,
+        "current_consumption_unit": "A",
+        "temperature": 7.8,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "458323",
+      "name": "Entspannen",
+      "type": "MEMV",
+      "location": {
+        "lat": 48.483334,
+        "lon": 9.216667
+      },
+      "contact": {
+        "name": "Werner Schmidt",
+        "phone": "+491625556660"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 0.22,
+        "current_consumption_unit": "A",
+        "temperature": 4.68,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660726",
+      "name": "Profilschleifen",
+      "type": "ABRA",
+      "location": {
+        "lat": 48.783333,
+        "lon": 9.183333
+      },
+      "contact": {
+        "name": "Dominik Schneider",
+        "phone": "+491515550847"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 1.29,
+        "current_consumption_unit": "A",
+        "temperature": 7.04,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660736",
+      "name": "R&O Gruppe-Profilschleifen",
+      "type": "ROG",
+      "location": {
+        "lat": 51.236443,
+        "lon": 12.720231
+      },
+      "contact": {
+        "name": "Fabian Esser",
+        "phone": "+491575554809"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 21.2,
+        "current_consumption_unit": "A",
+        "temperature": 5.7,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "458322",
+      "name": "Härten",
+      "type": "POST",
+      "location": {
+        "lat": 51.099998,
+        "lon": 7.116667
+      },
+      "contact": {
+        "name": "Kurt Hermann",
+        "phone": "+491515550885"
+      },
+      "live_data": {
+        "state": "Error",
+        "current_consumption": 8.04,
+        "current_consumption_unit": "A",
+        "temperature": 1.95,
+        "plc_alarm": true
+      }
+    },
+    {
+      "id": "10700",
+      "name": "Säuern, Brünnieren",
+      "type": "PROT",
+      "location": {
+        "lat": 52.150002,
+        "lon": 9.95
+      },
+      "contact": {
+        "name": "Werner Schmidt",
+        "phone": "+491625556660"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 12.55,
+        "current_consumption_unit": "A",
+        "temperature": 9.3,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660730",
+      "name": "R&O Gruppe",
+      "type": "ROG",
+      "location": {
+        "lat": 51.75631,
+        "lon": 14.332868
+      },
+      "contact": {
+        "name": "Fabian Esser",
+        "phone": "+491575554809"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 9.16,
+        "current_consumption_unit": "A",
+        "temperature": 0.18,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660611",
+      "name": "Drahterodieren",
+      "type": "EDM",
+      "location": {
+        "lat": 49.488888,
+        "lon": 8.469167
+      },
+      "contact": {
+        "name": "René Küppers",
+        "phone": "+491525556210"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 10.45,
+        "current_consumption_unit": "A",
+        "temperature": 10.54,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660425",
+      "name": "NC-Fräsen",
+      "type": "MACH",
+      "location": {
+        "lat": 52.133331,
+        "lon": 11.616667
+      },
+      "contact": {
+        "name": "Marcel Voigt",
+        "phone": "+491555557515"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 1.5,
+        "current_consumption_unit": "A",
+        "temperature": 7.56,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660430",
+      "name": "HSC-Fräsen",
+      "type": "MACH",
+      "location": {
+        "lat": 51.483334,
+        "lon": 11.966667
+      },
+      "contact": {
+        "name": "Marcel Voigt",
+        "phone": "+491555557515"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 9.0,
+        "current_consumption_unit": "A",
+        "temperature": 8.32,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660561",
+      "name": "Schleifen Plan",
+      "type": "ABRA",
+      "location": {
+        "lat": 51.516666,
+        "lon": 7.1
+      },
+      "contact": {
+        "name": "Carsten Schmitz",
+        "phone": "+491575550695"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 0.26,
+        "current_consumption_unit": "A",
+        "temperature": 16.2,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660541",
+      "name": "Schleifen Spitz",
+      "type": "ABRA",
+      "location": {
+        "lat": 52.266666,
+        "lon": 10.516667
+      },
+      "contact": {
+        "name": "Carsten Schmitz",
+        "phone": "+491575550695"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 1.19,
+        "current_consumption_unit": "A",
+        "temperature": 11.39,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660523",
+      "name": "Schleifen Rund",
+      "type": "ABRA",
+      "location": {
+        "lat": 50.775555,
+        "lon": 6.083611
+      },
+      "contact": {
+        "name": "Carsten Schmitz",
+        "phone": "+491575550695"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 0.47,
+        "current_consumption_unit": "A",
+        "temperature": 5.1,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660424",
+      "name": "NC-Fräsen Klopp",
+      "type": "MACH",
+      "location": {
+        "lat": 50.360023,
+        "lon": 7.589907
+      },
+      "contact": {
+        "name": "Marcel Voigt",
+        "phone": "+491555557515"
+      },
+      "live_data": {
+        "state": "Error",
+        "current_consumption": 5.46,
+        "current_consumption_unit": "A",
+        "temperature": 12.48,
+        "plc_alarm": true
+      }
+    },
+    {
+      "id": "660712",
+      "name": "Schlossern-Montage",
+      "type": "MACH",
+      "location": {
+        "lat": 51.435146,
+        "lon": 6.762692
+      },
+      "contact": {
+        "name": "Sandra Meyer",
+        "phone": "+491595559239"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 0.49,
+        "current_consumption_unit": "A",
+        "temperature": 2.7,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660214",
+      "name": "Schlossern-Optimierung",
+      "type": "MACH",
+      "location": {
+        "lat": 51.716667,
+        "lon": 8.766667
+      },
+      "contact": {
+        "name": "Sascha Schröder",
+        "phone": "+491605557369"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 0.53,
+        "current_consumption_unit": "A",
+        "temperature": 8.48,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660222",
+      "name": "Schlossern (weich)",
+      "type": "MACH",
+      "location": {
+        "lat": 52.283333,
+        "lon": 8.05
+      },
+      "contact": {
+        "name": "Sascha Schröder",
+        "phone": "+491605557369"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 4.9,
+        "current_consumption_unit": "A",
+        "temperature": 5.6,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660711",
+      "name": "Schlossern",
+      "type": "MACH",
+      "location": {
+        "lat": 52.021111,
+        "lon": 8.534722
+      },
+      "contact": {
+        "name": "Sandra Meyer",
+        "phone": "+491595559239"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 1.37,
+        "current_consumption_unit": "A",
+        "temperature": 7.56,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660621",
+      "name": "Senkerodieren",
+      "type": "EDM",
+      "location": {
+        "lat": 50.733334,
+        "lon": 7.1
+      },
+      "contact": {
+        "name": "René Küppers",
+        "phone": "+491525556210"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 3.78,
+        "current_consumption_unit": "A",
+        "temperature": 5.4,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "458311",
+      "name": "Härten",
+      "type": "POST",
+      "location": {
+        "lat": 49.583332,
+        "lon": 11.016667
+      },
+      "contact": {
+        "name": "Kurt Hermann",
+        "phone": "+491515550885"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 2.16,
+        "current_consumption_unit": "A",
+        "temperature": 1.5,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660731",
+      "name": "R&O Räumnadelschleifen",
+      "type": "ROG",
+      "location": {
+        "lat": 47.997791,
+        "lon": 7.842609
+      },
+      "contact": {
+        "name": "Fabian Esser",
+        "phone": "+491575554809"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 11.2,
+        "current_consumption_unit": "A",
+        "temperature": 7.8,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660211",
+      "name": "Schlossern",
+      "type": "MACH",
+      "location": {
+        "lat": 49.783333,
+        "lon": 9.933333
+      },
+      "contact": {
+        "name": "Sascha Schröder",
+        "phone": "+491605557369"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 24.96,
+        "current_consumption_unit": "A",
+        "temperature": 1.62,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660220",
+      "name": "Schlossern (polieren)",
+      "type": "MACH",
+      "location": {
+        "lat": 51.200001,
+        "lon": 6.7
+      },
+      "contact": {
+        "name": "Sascha Schröder",
+        "phone": "+491605557369"
+      },
+      "live_data": {
+        "state": "Error",
+        "current_consumption": 5.66,
+        "current_consumption_unit": "A",
+        "temperature": 11.22,
+        "plc_alarm": true
+      }
+    },
+    {
+      "id": "660221",
+      "name": "Schlossern (hart)",
+      "type": "MACH",
+      "location": {
+        "lat": 51.549999,
+        "lon": 7.216667
+      },
+      "contact": {
+        "name": "Sascha Schröder",
+        "phone": "+491605557369"
+      },
+      "live_data": {
+        "state": "Cleaning",
+        "current_consumption": 4.91,
+        "current_consumption_unit": "A",
+        "temperature": 0.0,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660713",
+      "name": "Schlossern-Montage",
+      "type": "MACH",
+      "location": {
+        "lat": 51.450832,
+        "lon": 7.013056
+      },
+      "contact": {
+        "name": "Sandra Meyer",
+        "phone": "+491595559239"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 0.24,
+        "current_consumption_unit": "A",
+        "temperature": 9.3,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660920",
+      "name": "Try Out Presse",
+      "type": "DEMO",
+      "location": {
+        "lat": 51.312801,
+        "lon": 9.481544
+      },
+      "contact": {
+        "name": "Werner Schmidt",
+        "phone": "+491625556660"
+      },
+      "live_data": {
+        "state": "Maintenance",
+        "current_consumption": 0.0,
+        "current_consumption_unit": "A",
+        "temperature": 14.85,
+        "plc_alarm": true
+      }
+    },
+    {
+      "id": "660422",
+      "name": "NC-Fräsen",
+      "type": "MACH",
+      "location": {
+        "lat": 53.86972,
+        "lon": 10.686389
+      },
+      "contact": {
+        "name": "Marcel Voigt",
+        "phone": "+491555557515"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 22.36,
+        "current_consumption_unit": "A",
+        "temperature": 13.32,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "458312",
+      "name": "Härten",
+      "type": "POST",
+      "location": {
+        "lat": 51.183334,
+        "lon": 7.2
+      },
+      "contact": {
+        "name": "Kurt Hermann",
+        "phone": "+491515550885"
+      },
+      "live_data": {
+        "state": "Cleaning",
+        "current_consumption": 5.04,
+        "current_consumption_unit": "A",
+        "temperature": 7.2,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660312",
+      "name": "Drehen konv.",
+      "type": "MACH",
+      "location": {
+        "lat": 51.033333,
+        "lon": 6.983333
+      },
+      "contact": {
+        "name": "Nina Jansen",
+        "phone": "+491555558764"
+      },
+      "live_data": {
+        "state": "Cleaning",
+        "current_consumption": 2.7,
+        "current_consumption_unit": "A",
+        "temperature": 12.16,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "458321",
+      "name": "Härten",
+      "type": "POST",
+      "location": {
+        "lat": 50.927223,
+        "lon": 11.586111
+      },
+      "contact": {
+        "name": "Kurt Hermann",
+        "phone": "+491515550885"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 23.27,
+        "current_consumption_unit": "A",
+        "temperature": 1.53,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660531",
+      "name": "Profilschleifen",
+      "type": "ABRA",
+      "location": {
+        "lat": 54.323334,
+        "lon": 10.139444
+      },
+      "contact": {
+        "name": "Dominik Schneider",
+        "phone": "+491515550847"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 0.13,
+        "current_consumption_unit": "A",
+        "temperature": 5.6,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "458324",
+      "name": "Nitrieren",
+      "type": "POST",
+      "location": {
+        "lat": 53.549999,
+        "lon": 8.583333
+      },
+      "contact": {
+        "name": "Ulrich Gorde",
+        "phone": "+491725559552"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 0.3,
+        "current_consumption_unit": "A",
+        "temperature": 6.29,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660951",
+      "name": "Beschichten",
+      "type": "POST",
+      "location": {
+        "lat": 51.481846,
+        "lon": 7.216236
+      },
+      "contact": {
+        "name": "Ulrich Gorde",
+        "phone": "+491725559552"
+      },
+      "live_data": {
+        "state": "Maintenance",
+        "current_consumption": 0.0,
+        "current_consumption_unit": "A",
+        "temperature": 10.03,
+        "plc_alarm": true
+      }
+    },
+    {
+      "id": "670210",
+      "name": "Sägen Werk2",
+      "type": "MACH",
+      "location": {
+        "lat": 48.366512,
+        "lon": 10.894446
+      },
+      "contact": {
+        "name": "Sandra Meyer",
+        "phone": "+491595559239"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 9.46,
+        "current_consumption_unit": "A",
+        "temperature": 12.16,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660735",
+      "name": "R&O Gruppe",
+      "type": "ROG",
+      "location": {
+        "lat": 52.753727,
+        "lon": 13.236681
+      },
+      "contact": {
+        "name": "Fabian Esser",
+        "phone": "+491575554809"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 11.7,
+        "current_consumption_unit": "A",
+        "temperature": 7.52,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660742",
+      "name": "KO-Schleifen",
+      "type": "ABRA",
+      "location": {
+        "lat": 49.992863,
+        "lon": 8.247253
+      },
+      "contact": {
+        "name": "Dominik Schneider",
+        "phone": "+491515550847"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 12.74,
+        "current_consumption_unit": "A",
+        "temperature": 14.58,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660314",
+      "name": "NC-Bearb. GROB",
+      "type": "MACH",
+      "location": {
+        "lat": 51.433334,
+        "lon": 6.883333
+      },
+      "contact": {
+        "name": "Nina Jansen",
+        "phone": "+491555558764"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 25.65,
+        "current_consumption_unit": "A",
+        "temperature": 7.84,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660313",
+      "name": "NC-Drehen",
+      "type": "MACH",
+      "location": {
+        "lat": 53.14389,
+        "lon": 8.213889
+      },
+      "contact": {
+        "name": "Nina Jansen",
+        "phone": "+491555558764"
+      },
+      "live_data": {
+        "state": "Error",
+        "current_consumption": 7.79,
+        "current_consumption_unit": "A",
+        "temperature": 8.16,
+        "plc_alarm": true
+      }
+    },
+    {
+      "id": "660412",
+      "name": "Fräsen konventionell AZUBI",
+      "type": "MACH",
+      "location": {
+        "lat": 50.983334,
+        "lon": 11.033333
+      },
+      "contact": {
+        "name": "Marcel Voigt",
+        "phone": "+491555557515"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 1.18,
+        "current_consumption_unit": "A",
+        "temperature": 15.36,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660741",
+      "name": "KO-Schleifen",
+      "type": "ABRA",
+      "location": {
+        "lat": 48.521637,
+        "lon": 9.057645
+      },
+      "contact": {
+        "name": "Dominik Schneider",
+        "phone": "+491515550847"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 15.07,
+        "current_consumption_unit": "A",
+        "temperature": 7.65,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660411",
+      "name": "Fräsen Uni",
+      "type": "MACH",
+      "location": {
+        "lat": 51.366669,
+        "lon": 7.483333
+      },
+      "contact": {
+        "name": "Marcel Voigt",
+        "phone": "+491555557515"
+      },
+      "live_data": {
+        "state": "Ready",
+        "current_consumption": 0.2,
+        "current_consumption_unit": "A",
+        "temperature": 11.1,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660532",
+      "name": "Schleifen Plan",
+      "type": "ABRA",
+      "location": {
+        "lat": 50.833332,
+        "lon": 12.916667
+      },
+      "contact": {
+        "name": "Carsten Schmitz",
+        "phone": "+491575550695"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 15.51,
+        "current_consumption_unit": "A",
+        "temperature": 9.9,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660213",
+      "name": "Schlossern-Montage",
+      "type": "MACH",
+      "location": {
+        "lat": 48.766666,
+        "lon": 11.433333
+      },
+      "contact": {
+        "name": "Sascha Schröder",
+        "phone": "+491605557369"
+      },
+      "live_data": {
+        "state": "Cleaning",
+        "current_consumption": 3.5,
+        "current_consumption_unit": "A",
+        "temperature": 13.8,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "458000",
+      "name": "Härten",
+      "type": "POST",
+      "location": {
+        "lat": 50.883331,
+        "lon": 8.016667
+      },
+      "contact": {
+        "name": "Kurt Hermann",
+        "phone": "+491515550885"
+      },
+      "live_data": {
+        "state": "Running",
+        "current_consumption": 24.95,
+        "current_consumption_unit": "A",
+        "temperature": 8.85,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660542",
+      "name": "Schleifen Rund",
+      "type": "ABRA",
+      "location": {
+        "lat": 51.200001,
+        "lon": 6.433333
+      },
+      "contact": {
+        "name": "Carsten Schmitz",
+        "phone": "+491575550695"
+      },
+      "live_data": {
+        "state": "Error",
+        "current_consumption": 6.75,
+        "current_consumption_unit": "A",
+        "temperature": 13.76,
+        "plc_alarm": true
+      }
+    },
+    {
+      "id": "660210",
+      "name": "Schlossern (polieren)",
+      "type": "MACH",
+      "location": {
+        "lat": 49.466667,
+        "lon": 11.0
+      },
+      "contact": {
+        "name": "Sascha Schröder",
+        "phone": "+491605557369"
+      },
+      "live_data": {
+        "state": "Cleaning",
+        "current_consumption": 5.13,
+        "current_consumption_unit": "A",
+        "temperature": 4.42,
+        "plc_alarm": false
+      }
+    },
+    {
+      "id": "660828",
+      "name": "Abliefern",
+      "type": "FINA",
+      "location": {
+        "lat": 51.050407,
+        "lon": 13.737262
+      },
+      "contact": {
+        "name": "Werner Schmidt",
+        "phone": "+491625556660"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "660153",
+      "name": "Änderung",
+      "type": "OTHE",
+      "location": {
+        "lat": 49.150002,
+        "lon": 9.2166
+      },
+      "contact": {
+        "name": "Thomas Rosenbaum",
+        "phone": "+491625555718"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "660160",
+      "name": "Anforderung Prüfmittel",
+      "type": "PRE",
+      "location": {
+        "lat": 50.099998,
+        "lon": 8.8
+      },
+      "contact": {
+        "name": "Werner Schmidt",
+        "phone": "+491625556660"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "53330",
+      "name": "AV / Projektierung",
+      "type": "OTHE",
+      "location": {
+        "lat": 49.75,
+        "lon": 6.633333
+      },
+      "contact": {
+        "name": "Thomas Rosenbaum",
+        "phone": "+491625555718"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "660762",
+      "name": "Beschriften",
+      "type": "POST",
+      "location": {
+        "lat": 51.961563,
+        "lon": 7.628202
+      },
+      "contact": {
+        "name": "Ulrich Gorde",
+        "phone": "+491725559552"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "660714",
+      "name": "Elektro/Pneumatikplan erstellen",
+      "type": "PRE",
+      "location": {
+        "lat": 51.233334,
+        "lon": 6.783333
+      },
+      "contact": {
+        "name": "Werner Schmidt",
+        "phone": "+491625556660"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "660152",
+      "name": "Entnahme",
+      "type": "FINA",
+      "location": {
+        "lat": 48.901943,
+        "lon": 8.716667
+      },
+      "contact": {
+        "name": "Werner Schmidt",
+        "phone": "+491625556660"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "660810",
+      "name": "Kontrolle",
+      "type": "POST",
+      "location": {
+        "lat": 50.933594,
+        "lon": 6.961899
+      },
+      "contact": {
+        "name": "Ulrich Gorde",
+        "phone": "+491725559552"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "660151",
+      "name": "Mat. Bestellen",
+      "type": "OTHE",
+      "location": {
+        "lat": 51.524723,
+        "lon": 6.922778
+      },
+      "contact": {
+        "name": "Thomas Rosenbaum",
+        "phone": "+491625555718"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "53200",
+      "name": "Prod. AV",
+      "type": "OTHE",
+      "location": {
+        "lat": 51.584999,
+        "lon": 7.161944
+      },
+      "contact": {
+        "name": "Thomas Rosenbaum",
+        "phone": "+491625555718"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    },
+    {
+      "id": "660155",
+      "name": "WZ Lieferung",
+      "type": "PRE",
+      "location": {
+        "lat": 50.935173,
+        "lon": 6.953101
+      },
+      "contact": {
+        "name": "Werner Schmidt",
+        "phone": "+491625556660"
+      },
+      "live_data": {
+        "state": "",
+        "current_consumption_unit": ""
+      }
+    }
+  ]
+}

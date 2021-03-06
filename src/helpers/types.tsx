@@ -19,3 +19,4 @@ export interface Machine {
 }
 
 export type Action = { type: string; displayData: Machine[] };
+export type errorAction = { type: string; errorMessage: string };

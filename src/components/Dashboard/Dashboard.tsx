@@ -1,6 +1,7 @@
 import React, { useState, useReducer, useEffect } from 'react';
 import axios from 'axios';
 
+import Search from '../Dashboard/Search';
 import Table from '../Machines/MachineTable';
 import { Machine, Action } from '../../helpers/types';
 
@@ -33,6 +34,7 @@ const Dashboard = () => {
   return (
     <React.Fragment>
       <h1>Machine Dashboard</h1>
+      <Search />
       <Table data={displayData} />
     </React.Fragment>
   );

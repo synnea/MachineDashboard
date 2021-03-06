@@ -22,7 +22,7 @@ const Dashboard = () => {
   }, []);
 
   useEffect(() => {
-    console.log(displayData);
+    // console.log(displayData);
   }, [displayData]);
 
   const fetchDisplayData = () => {
@@ -31,10 +31,14 @@ const Dashboard = () => {
     });
   };
 
+  const onSearchHandler = (searchContent: string): void => {
+    console.log('searchContent' + searchContent);
+  };
+
   return (
     <React.Fragment>
       <h1>Machine Dashboard</h1>
-      <Search />
+      <Search search={onSearchHandler} />
       <Table data={displayData} />
     </React.Fragment>
   );

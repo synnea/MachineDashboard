@@ -85,11 +85,6 @@ const MachineTable = (props: TableProps) => {
     }
   });
 
-  useEffect(() => {
-    console.log('rows' + JSON.stringify(rows));
-    console.log('condi' + JSON.stringify(conditionalRowStyles));
-  });
-
   let table = null;
 
   if (props.data.length > 0) {

@@ -11,6 +11,10 @@ import TextField from '@material-ui/core/TextField';
 import './Search.css';
 import { errorAction } from '../../helpers/types';
 
+interface SearchProps {
+  search: (searchContent: string) => void;
+}
+
 const errorReducer = (
   curErrorState: { isError: boolean; errorMessage: string },
   action: errorAction
@@ -23,7 +27,7 @@ const errorReducer = (
   }
 };
 
-const Search = () => {
+const Search = (props: SearchProps) => {
   const [enteredSearch, setEnteredSearch] = useState('');
   const [isButtonDisabled, setButtonToEnabled] = useState(true);
 
@@ -41,8 +45,10 @@ const Search = () => {
 
   const onSubmitHandler = () => {
     const id = Number(enteredSearch);
-    if (typeof Number !== 'number') {
+    if (isNaN(id)) {
       dispatchError({ type: 'SET', errorMessage: 'Only numbers, please!' });
+    } else {
+      props.search(enteredSearch);
     }
   };
 

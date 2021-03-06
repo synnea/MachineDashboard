@@ -14,7 +14,7 @@ export interface Machine {
     current_consumption: number;
     current_consumption_unit: string;
     temperature: number;
-    plc_alarm: boolean;
+    plc_alarm: boolean | string;
   };
 }
 

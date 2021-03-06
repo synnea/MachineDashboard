@@ -43,14 +43,28 @@ const MachineTable = (props: TableProps) => {
   ];
 
   const rows = props.data.map((machine) => {
-    return {
-      id: machine.id,
-      name: machine.name,
-      current_consumption: machine.live_data.current_consumption,
-      current_consumption_unit: machine.live_data.current_consumption_unit,
-      temperature: machine.live_data.temperature,
-      plc_alarm: machine.live_data.plc_alarm,
-    };
+    if (
+      machine.live_data.plc_alarm === true ||
+      machine.live_data.plc_alarm === false
+    ) {
+      return {
+        id: machine.id,
+        name: machine.name,
+        current_consumption: machine.live_data.current_consumption,
+        current_consumption_unit: machine.live_data.current_consumption_unit,
+        temperature: machine.live_data.temperature,
+        plc_alarm: machine.live_data.plc_alarm.toString(),
+      };
+    } else {
+      return {
+        id: machine.id,
+        name: machine.name,
+        current_consumption: machine.live_data.current_consumption,
+        current_consumption_unit: machine.live_data.current_consumption_unit,
+        temperature: machine.live_data.temperature,
+        plc_alarm: '',
+      };
+    }
   });
 
   useEffect(() => {
@@ -62,6 +76,7 @@ const MachineTable = (props: TableProps) => {
   if (props.data.length > 0) {
     table = (
       <DataTable
+        pagination={true}
         className="table"
         columns={columns}
         data={rows}

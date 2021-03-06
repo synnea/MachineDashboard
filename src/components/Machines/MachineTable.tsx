@@ -8,6 +8,24 @@ interface TableProps {
   data: Machine[];
 }
 
+const conditionalRowStyles = [
+  {
+    when: (row: Row) => row.plc_alarm === 'true',
+    style: {
+      backgroundColor: 'lightsalmon',
+    },
+  },
+];
+
+interface Row {
+  id: number;
+  name: string;
+  current_consumption: number;
+  current_consumption_unit: string;
+  temperature: number;
+  plc_alarm: string;
+}
+
 const MachineTable = (props: TableProps) => {
   const columns = [
     {
@@ -69,6 +87,7 @@ const MachineTable = (props: TableProps) => {
 
   useEffect(() => {
     console.log('rows' + JSON.stringify(rows));
+    console.log('condi' + JSON.stringify(conditionalRowStyles));
   });
 
   let table = null;
@@ -80,6 +99,7 @@ const MachineTable = (props: TableProps) => {
         className="table"
         columns={columns}
         data={rows}
+        conditionalRowStyles={conditionalRowStyles}
         title="Machine Data"
       />
     );

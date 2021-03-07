@@ -1,5 +1,6 @@
 export interface Machine {
   id: string;
+  searchId: string;
   name: string;
   location: {
     lat: number;
@@ -20,8 +21,7 @@ export interface Machine {
 
 export type Action = {
   type: string;
-  displayMachines?: Machine[];
-  displayError?: boolean | undefined;
-  id?: string;
+  displayMachines: Machine[];
+  originalData: Machine[];
+  id: string;
 };
-export type errorAction = { type: string; errorMessage: string };

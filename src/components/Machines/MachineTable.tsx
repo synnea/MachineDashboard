@@ -27,9 +27,6 @@ interface Row {
 }
 
 const MachineTable = (props: TableProps) => {
-  useEffect(() => {
-    console.log('props in Table' + props.data);
-  });
   const columns = [
     {
       name: 'id',

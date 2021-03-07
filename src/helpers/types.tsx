@@ -1,5 +1,5 @@
 export interface Machine {
-  id: number;
+  id: string;
   name: string;
   location: {
     lat: number;
@@ -18,5 +18,5 @@ export interface Machine {
   };
 }
 
-export type Action = { type: string; displayData: Machine[] };
+export type Action = { type: string; displayData: Machine[]; id: string };
 export type errorAction = { type: string; errorMessage: string };

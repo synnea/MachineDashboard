@@ -12,7 +12,7 @@ import './Search.css';
 import { errorAction } from '../../helpers/types';
 
 interface SearchProps {
-  search: (searchContent: string) => void;
+  search: (searchContent: number) => void;
 }
 
 const errorReducer = (
@@ -48,7 +48,7 @@ const Search = (props: SearchProps) => {
     if (isNaN(id)) {
       dispatchError({ type: 'SET', errorMessage: 'Only numbers, please!' });
     } else {
-      props.search(enteredSearch);
+      props.search(id);
     }
   };
 

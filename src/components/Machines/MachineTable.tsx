@@ -18,7 +18,7 @@ const conditionalRowStyles = [
 ];
 
 interface Row {
-  id: number;
+  id: string;
   name: string;
   current_consumption: number;
   current_consumption_unit: string;

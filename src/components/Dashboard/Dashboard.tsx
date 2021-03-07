@@ -4,11 +4,20 @@ import axios from 'axios';
 import Search from '../Dashboard/Search';
 import Table from '../Machines/MachineTable';
 import { Machine, Action } from '../../helpers/types';
+import { responsiveFontSizes } from '@material-ui/core';
 
 const displayReducer = (currentDisplay: Machine[], action: Action) => {
   switch (action.type) {
     case 'SET':
       return action.displayData;
+    case 'SEARCH':
+      const filteredId = currentDisplay.filter(
+        (machine) => machine.id === action.id
+      );
+      if (filteredId === []) {
+        // onErrorHandler();
+      }
+      return filteredId;
     default:
       return currentDisplay;
   }
@@ -27,13 +36,16 @@ const Dashboard = () => {
 
   const fetchDisplayData = () => {
     axios.get('http://localhost:3001/machines').then((resp) => {
-      dispatch({ type: 'SET', displayData: resp.data });
+      dispatch({ type: 'SET', displayData: resp.data, id: '' });
     });
   };
 
-  const onSearchHandler = (searchContent: string): void => {
-    console.log('searchContent' + searchContent);
+  const onSearchHandler = (searchContent: number): void => {
+    const stringId = searchContent.toString();
+    dispatch({ type: 'SEARCH', displayData: displayData, id: stringId });
   };
+
+  const onErrorHandler = () => {};
 
   return (
     <React.Fragment>

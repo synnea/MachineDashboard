@@ -6,52 +6,89 @@ import Table from '../Machines/MachineTable';
 import { Machine, Action } from '../../helpers/types';
 import { responsiveFontSizes } from '@material-ui/core';
 
-const displayReducer = (currentDisplay: Machine[], action: Action) => {
+interface State {
+  displayMachines: Machine[];
+  displayError: boolean | undefined;
+}
+
+const displayReducer = (curDisplayState: State, action: Action): any => {
   switch (action.type) {
     case 'SET':
-      return action.displayData;
+      return {
+        ...curDisplayState,
+        displayError: undefined,
+        displayMachines: action.displayMachines,
+      };
+
     case 'SEARCH':
-      const filteredId = currentDisplay.filter(
+      const filteredId = curDisplayState.displayMachines.filter(
         (machine) => machine.id === action.id
       );
-      if (filteredId === []) {
-        // onErrorHandler();
+      if (filteredId.length === 1) {
+        return {
+          ...curDisplayState,
+          displayError: false,
+          displayMachines: filteredId,
+        };
+      } else {
+        return { ...curDisplayState, displayError: true };
       }
-      return filteredId;
+    case 'CLEAR':
+      return { ...curDisplayState, displayError: undefined };
     default:
-      return currentDisplay;
+      return curDisplayState;
   }
 };
 
+const initialState: State = {
+  displayMachines: [],
+  displayError: undefined,
+};
+
 const Dashboard = () => {
-  const [displayData, dispatch] = useReducer(displayReducer, []);
+  const [displayState, dispatch] = useReducer(displayReducer, initialState);
 
   useEffect(() => {
     fetchDisplayData();
   }, []);
 
   useEffect(() => {
-    // console.log(displayData);
-  }, [displayData]);
+    console.log('displayError' + JSON.stringify(displayState.displayError));
+  }, [displayState]);
 
   const fetchDisplayData = () => {
     axios.get('http://localhost:3001/machines').then((resp) => {
-      dispatch({ type: 'SET', displayData: resp.data, id: '' });
+      dispatch({
+        type: 'SET',
+        displayMachines: resp.data,
+        id: '',
+        displayError: undefined,
+      });
     });
   };
 
-  const onSearchHandler = (searchContent: number): void => {
-    const stringId = searchContent.toString();
-    dispatch({ type: 'SEARCH', displayData: displayData, id: stringId });
+  const onSearchHandler = (searchContent: string): void => {
+    dispatch({
+      type: 'SEARCH',
+      displayMachines: displayState.displayMachines,
+      id: searchContent,
+      displayError: undefined,
+    });
   };
 
-  const onErrorHandler = () => {};
+  const onClearFilterHandler = () => {
+    fetchDisplayData();
+  };
 
   return (
     <React.Fragment>
       <h1>Machine Dashboard</h1>
-      <Search search={onSearchHandler} />
-      <Table data={displayData} />
+      <Search
+        search={onSearchHandler}
+        notFound={displayState.displayError}
+        clearfilter={onClearFilterHandler}
+      />
+      <Table data={displayState.displayMachines} />
     </React.Fragment>
   );
 };

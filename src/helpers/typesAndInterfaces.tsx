@@ -19,6 +19,15 @@ export interface Machine {
   };
 }
 
+export interface Row {
+  id: string;
+  name: string;
+  current_consumption: number;
+  current_consumption_unit: string;
+  temperature: number;
+  plc_alarm: string;
+}
+
 export interface httpState {
   loading: boolean;
   httpError: boolean;

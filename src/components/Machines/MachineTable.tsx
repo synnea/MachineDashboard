@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import DataTable from 'react-data-table-component';
 
 import './MachineTable.css';
-import { Machine } from '../../helpers/typesAndInterfaces';
+import { Machine, Row } from '../../helpers/typesAndInterfaces';
 
 interface TableProps {
   data: Machine[];
@@ -16,15 +16,6 @@ const conditionalRowStyles = [
     },
   },
 ];
-
-interface Row {
-  id: string;
-  name: string;
-  current_consumption: number;
-  current_consumption_unit: string;
-  temperature: number;
-  plc_alarm: string;
-}
 
 const MachineTable = (props: TableProps) => {
   const columns = [
@@ -60,6 +51,10 @@ const MachineTable = (props: TableProps) => {
     },
   ];
 
+  const rowClickHandler = (id: string) => {
+    alert(id);
+  };
+
   const rows = props.data.map((machine) => {
     if (
       machine.live_data.plc_alarm === true ||
@@ -85,20 +80,17 @@ const MachineTable = (props: TableProps) => {
     }
   });
 
-  let table = null;
-
-  if (props.data.length > 0) {
-    table = (
-      <DataTable
-        pagination={true}
-        className="table"
-        columns={columns}
-        data={rows}
-        conditionalRowStyles={conditionalRowStyles}
-        title="Machine Data"
-      />
-    );
-  }
+  const table = (
+    <DataTable
+      pagination={true}
+      className="table"
+      columns={columns}
+      data={rows}
+      conditionalRowStyles={conditionalRowStyles}
+      onRowClicked={(row) => rowClickHandler(row.id)}
+      title="Machine Data"
+    />
+  );
 
   return <div>{table}</div>;
 };

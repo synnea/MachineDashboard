@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import DataTable from 'react-data-table-component';
 
 import './MachineTable.css';
-import { Machine } from '../../helpers/types';
+import { Machine } from '../../helpers/typesAndInterfaces';
 
 interface TableProps {
   data: Machine[];

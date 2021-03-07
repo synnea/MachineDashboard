@@ -19,9 +19,25 @@ export interface Machine {
   };
 }
 
+export interface httpState {
+  loading: boolean;
+  httpError: boolean;
+}
+
+export interface State {
+  displayMachines: Machine[];
+  originalData: Machine[];
+}
+
 export type Action = {
   type: string;
   displayMachines: Machine[];
   originalData: Machine[];
   id: string;
+};
+
+export type httpAction = {
+  type: string;
+  loading: boolean;
+  httpError: boolean;
 };

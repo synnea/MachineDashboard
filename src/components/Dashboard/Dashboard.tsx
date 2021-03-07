@@ -3,13 +3,15 @@ import axios from 'axios';
 
 import Search from '../Dashboard/Search';
 import Table from '../Machines/MachineTable';
-import { Machine, Action } from '../../helpers/types';
+import {
+  Machine,
+  Action,
+  httpState,
+  httpAction,
+  State,
+} from '../../helpers/typesAndInterfaces';
 import MachineDetail from '../Machines/MachineDetail';
-
-interface State {
-  displayMachines: Machine[];
-  originalData: Machine[];
-}
+import LoadingIndicator from '../UI/LoadingIndicator';
 
 const displayReducer = (curDisplayState: State, action: Action): any => {
   switch (action.type) {
@@ -47,27 +49,59 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
   }
 };
 
+const httpReducer = (curhttpState: httpState, action: httpAction) => {
+  switch (action.type) {
+    case 'SEND':
+      return { loading: true, httpError: false };
+    case 'ERROR':
+      return { loading: false, httpError: true };
+    case 'CLEAR':
+      return { loading: false, httpError: curhttpState.httpError };
+    default:
+      return curhttpState;
+  }
+};
+
 const initialState: State = {
   displayMachines: [],
   originalData: [],
 };
 
+const initialHttpState: httpState = {
+  loading: false,
+  httpError: false,
+};
+
 const Dashboard = () => {
   const [displayState, dispatch] = useReducer(displayReducer, initialState);
+  const [httpState, dispatchHttp] = useReducer(httpReducer, initialHttpState);
 
   useEffect(() => {
     fetchDisplayData();
   }, []);
 
   const fetchDisplayData = () => {
-    axios.get('http://localhost:3001/machines').then((resp) => {
-      dispatch({
-        type: 'SET',
-        id: '',
-        displayMachines: resp.data,
-        originalData: resp.data,
-      });
-    });
+    dispatchHttp({ type: 'SEND', loading: true, httpError: false });
+    axios
+      .get('http://localhost:3001/machines')
+      .then((resp) => {
+        dispatch({
+          type: 'SET',
+          id: '',
+          displayMachines: resp.data,
+          originalData: resp.data,
+        });
+      })
+      .catch(() => {
+        dispatchHttp({ type: 'ERROR', loading: false, httpError: true });
+      })
+      .then(() =>
+        dispatchHttp({
+          type: 'CLEAR',
+          loading: false,
+          httpError: httpState.httpError,
+        })
+      );
   };
 
   const onSearchHandler = (searchContent: string): void => {
@@ -78,11 +112,19 @@ const Dashboard = () => {
       originalData: displayState.originalData,
     });
   };
+
+  let table: any = null;
+
+  if (httpState.loading === true) table = <LoadingIndicator />;
+  else if (httpState.httpError === true)
+    table = <div>Sorry, we could not reach the data!</div>;
+  else table = <Table data={displayState.displayMachines} />;
+
   return (
     <React.Fragment>
       <h1>Machine Dashboard</h1>
       <Search search={onSearchHandler} />
-      <Table data={displayState.displayMachines} />
+      {table}
     </React.Fragment>
   );
 };

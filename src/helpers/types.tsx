@@ -20,8 +20,8 @@ export interface Machine {
 
 export type Action = {
   type: string;
-  displayMachines: Machine[];
-  displayError: boolean | undefined;
-  id: string;
+  displayMachines?: Machine[];
+  displayError?: boolean | undefined;
+  id?: string;
 };
 export type errorAction = { type: string; errorMessage: string };

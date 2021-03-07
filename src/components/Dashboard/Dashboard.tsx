@@ -4,7 +4,6 @@ import axios from 'axios';
 import Search from '../Dashboard/Search';
 import Table from '../Machines/MachineTable';
 import { Machine, Action } from '../../helpers/types';
-import { responsiveFontSizes } from '@material-ui/core';
 
 interface State {
   displayMachines: Machine[];
@@ -61,8 +60,6 @@ const Dashboard = () => {
       dispatch({
         type: 'SET',
         displayMachines: resp.data,
-        id: '',
-        displayError: undefined,
       });
     });
   };
@@ -70,9 +67,7 @@ const Dashboard = () => {
   const onSearchHandler = (searchContent: string): void => {
     dispatch({
       type: 'SEARCH',
-      displayMachines: displayState.displayMachines,
       id: searchContent,
-      displayError: undefined,
     });
   };
 

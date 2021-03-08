@@ -1,16 +1,14 @@
-import React, { useState, useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import axios from 'axios';
 
 import Search from '../Dashboard/Search';
 import Table from '../Machines/MachineTable';
 import {
-  Machine,
   Action,
   httpState,
   httpAction,
   State,
 } from '../../helpers/typesAndInterfaces';
-import MachineDetail from '../Machines/MachineDetail';
 import LoadingIndicator from '../UI/LoadingIndicator';
 
 const displayReducer = (curDisplayState: State, action: Action): any => {
@@ -18,8 +16,8 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
     case 'SET':
       return {
         ...curDisplayState,
-        displayMachines: action.displayMachines,
-        originalData: action.originalData,
+        filteredMachines: action.filteredMachines,
+        allMachines: action.allMachines,
       };
 
     case 'SEARCH':
@@ -32,7 +30,7 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
             stringId.slice(0, stringedId.length);
 
           // create a searchId and set it to the length of the input
-          const slicedArray = curDisplayState.originalData.map((machine) => ({
+          const slicedArray = curDisplayState.allMachines.map((machine) => ({
             ...machine,
             searchId: slicedId(machine.id.toString()),
           }));
@@ -41,12 +39,12 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
             return machine.searchId === stringedId;
           });
 
-          return { ...curDisplayState, displayMachines: filteredArray };
+          return { ...curDisplayState, filteredMachines: filteredArray };
         }
       }
       return {
         ...curDisplayState,
-        displayMachines: curDisplayState.originalData,
+        filteredMachines: curDisplayState.allMachines,
       };
     default:
       return curDisplayState;
@@ -67,8 +65,8 @@ const httpReducer = (curhttpState: httpState, action: httpAction) => {
 };
 
 const initialState: State = {
-  displayMachines: [],
-  originalData: [],
+  filteredMachines: [],
+  allMachines: [],
 };
 
 const initialHttpState: httpState = {
@@ -82,6 +80,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchDisplayData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchDisplayData = () => {
@@ -91,8 +90,8 @@ const Dashboard = () => {
       .then((resp) => {
         dispatch({
           type: 'SET',
-          displayMachines: resp.data,
-          originalData: resp.data,
+          filteredMachines: resp.data,
+          allMachines: resp.data,
         });
       })
       .catch(() => {
@@ -112,8 +111,8 @@ const Dashboard = () => {
     dispatch({
       type: 'SEARCH',
       id: searchId,
-      displayMachines: displayState.displayMachines,
-      originalData: displayState.originalData,
+      filteredMachines: displayState.filteredMachines,
+      allMachines: displayState.allMachines,
     });
   };
 
@@ -122,7 +121,7 @@ const Dashboard = () => {
   if (httpState.loading === true) table = <LoadingIndicator />;
   else if (httpState.httpError === true)
     table = <div>Sorry, we could not reach the data!</div>;
-  else table = <Table data={displayState.displayMachines} />;
+  else table = <Table data={displayState.filteredMachines} />;
 
   return (
     <React.Fragment>

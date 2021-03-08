@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import LoadingIndicator from '../UI/LoadingIndicator';
 
 import { useLocation } from 'react-router-dom';
 import { Machine } from '../../helpers/typesAndInterfaces';
@@ -14,10 +15,13 @@ export interface IMachineData {
 // 'useReducer' would be a more elegant solution here, but I ran out of time to implement it.
 // so using several useState instances instead.
 
+// the visual design of this detail page is not great either; if I had more time I would look for a suitable layout template.
+
 const MachineDetail = () => {
   const [allMachineData, setAllMachineData] = useState<IMachineData>();
   const [detailMachineData, setDetailMachineData] = useState<IMachineData>();
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [enteredName, setNewName] = useState('');
 
@@ -30,15 +34,15 @@ const MachineDetail = () => {
   }, []);
 
   useEffect(() => {
-    if (!allMachineData) setError(true);
+    if (!allMachineData) setLoading(true);
     else {
-      setError(false);
+      setLoading(false);
       const machine = allMachineData.data.filter(
         (machine) => machine.id === Number(id)
       );
       setDetailMachineData({ data: machine });
     }
-  }, [allMachineData]);
+  }, [allMachineData, id]);
 
   useEffect(() => {
     if (editMode) {
@@ -62,11 +66,11 @@ const MachineDetail = () => {
     machine = detailMachineData.data;
   }
 
-  let displayError = null;
+  let display = null;
 
-  if (error) {
-    displayError = <h2>Sorry, something went wrong</h2>;
-  }
+  if (loading) display = <LoadingIndicator />;
+
+  if (error) display = <h2>Sorry, something went wrong</h2>;
 
   const onClickHandler = () => {
     setEditMode(true);
@@ -77,7 +81,7 @@ const MachineDetail = () => {
   };
 
   const onKeyPressHandler = (e: React.KeyboardEvent) => {
-    if (e.key == 'Enter') {
+    if (e.key === 'Enter') {
       onSubmitHandler();
     }
   };
@@ -118,7 +122,7 @@ const MachineDetail = () => {
   return (
     <div className="detail-page">
       <h1>Machine Detail</h1>
-      {displayError}
+      {display}
       {machine.map((machine) => {
         return (
           <div key={machine.id} className="machine-card">

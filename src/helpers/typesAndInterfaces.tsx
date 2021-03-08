@@ -23,6 +23,7 @@ export interface Machine {
 export interface Row {
   id: number;
   name: string;
+  state: string;
   current_consumption: number;
   current_consumption_unit: string;
   temperature: number;
@@ -35,14 +36,14 @@ export interface httpState {
 }
 
 export interface State {
-  displayMachines: Machine[];
-  originalData: Machine[];
+  filteredMachines: Machine[];
+  allMachines: Machine[];
 }
 
 export type Action = {
   type: string;
-  displayMachines: Machine[];
-  originalData: Machine[];
+  filteredMachines: Machine[];
+  allMachines: Machine[];
   id?: number;
 };
 

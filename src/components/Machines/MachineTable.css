@@ -1,6 +1,7 @@
 .table {
   display: grid;
   justify-content: center;
+  cursor: pointer;
 }
 
 .rdt_TableHeader {

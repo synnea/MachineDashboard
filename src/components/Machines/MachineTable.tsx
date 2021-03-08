@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import DataTable from 'react-data-table-component';
 
@@ -28,6 +28,11 @@ const MachineTable = (props: TableProps) => {
     {
       name: 'Name',
       selector: 'name',
+      sortable: true,
+    },
+    {
+      name: 'State',
+      selector: 'state',
       sortable: true,
     },
     {
@@ -66,6 +71,7 @@ const MachineTable = (props: TableProps) => {
       return {
         id: machine.id,
         name: machine.name,
+        state: machine.live_data.state,
         current_consumption: machine.live_data.current_consumption,
         current_consumption_unit: machine.live_data.current_consumption_unit,
         temperature: machine.live_data.temperature,
@@ -75,6 +81,7 @@ const MachineTable = (props: TableProps) => {
       return {
         id: machine.id,
         name: machine.name,
+        state: machine.live_data.state,
         current_consumption: machine.live_data.current_consumption,
         current_consumption_unit: machine.live_data.current_consumption_unit,
         temperature: machine.live_data.temperature,

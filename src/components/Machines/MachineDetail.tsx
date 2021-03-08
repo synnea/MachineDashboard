@@ -11,9 +11,12 @@ export interface IMachineData {
   data: Machine[];
 }
 
+// 'useReducer' would be a more elegant solution here, but I ran out of time to implement it.
+// so using several useState instances instead.
+
 const MachineDetail = () => {
   const [allMachineData, setAllMachineData] = useState<IMachineData>();
-  const [detailMachine, setDetailMachine] = useState<IMachineData>();
+  const [detailMachineData, setDetailMachineData] = useState<IMachineData>();
   const [error, setError] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [enteredName, setNewName] = useState('');
@@ -27,12 +30,13 @@ const MachineDetail = () => {
   }, []);
 
   useEffect(() => {
-    if (!allMachineData) return;
+    if (!allMachineData) setError(true);
     else {
+      setError(false);
       const machine = allMachineData.data.filter(
         (machine) => machine.id === Number(id)
       );
-      setDetailMachine({ data: machine });
+      setDetailMachineData({ data: machine });
     }
   }, [allMachineData]);
 
@@ -54,8 +58,8 @@ const MachineDetail = () => {
 
   let machine: Machine[] = [];
 
-  if (detailMachine) {
-    machine = detailMachine.data;
+  if (detailMachineData) {
+    machine = detailMachineData.data;
   }
 
   let displayError = null;
@@ -79,22 +83,24 @@ const MachineDetail = () => {
   };
 
   const onSubmitHandler = () => {
-    if (detailMachine) {
-      machine = detailMachine.data;
+    if (detailMachineData) {
       const numId = Number(id);
-      const newName = enteredName;
-      console.log(enteredName);
-      // axios
-      //   .put(`http://localhost:3001/machines/${numId}`, {
-      //     ...machine,
-      //     enteredName,
-      //   })
-      //   .then((resp) => {
-      //     console.log(resp.data);
-      //   })
-      //   .catch((error) => {
-      //     console.log(error);
-      //   });
+
+      axios
+        .put(`http://localhost:3001/machines/${numId}`, {
+          ...machine[0],
+          name: enteredName,
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch(() => {
+          setError(true);
+        })
+        .then(() => {
+          setEditMode(false);
+          fetchMachineData();
+        });
     }
   };
 
@@ -105,7 +111,7 @@ const MachineDetail = () => {
       size="small"
       onClick={onClickHandler}
     >
-      Edit
+      Update Name
     </Button>
   );
 

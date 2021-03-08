@@ -43,7 +43,7 @@ export type Action = {
   type: string;
   displayMachines: Machine[];
   originalData: Machine[];
-  id: number;
+  id?: number;
 };
 
 export type httpAction = {

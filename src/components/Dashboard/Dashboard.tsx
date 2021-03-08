@@ -23,28 +23,31 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
       };
 
     case 'SEARCH':
-      const stringId = action.id.toString();
-      if (stringId.length !== 0) {
-        // helper function to slice ID to appropriate length
-        const slicedId = (stringId: string) =>
-          stringId.slice(0, stringId.length);
+      if (action.id) {
+        const stringedId = action.id.toString();
 
-        // create a searchId and set it to the length of the input
-        const slicedArray = curDisplayState.originalData.map((machine) => ({
-          ...machine,
-          searchId: slicedId(machine.id.toString()),
-        }));
+        if (stringedId !== '') {
+          // helper function to slice ID to appropriate length
+          const slicedId = (stringId: string) =>
+            stringId.slice(0, stringedId.length);
 
-        const filteredArray = slicedArray.filter((machine) => {
-          return machine.searchId === stringId;
-        });
+          // create a searchId and set it to the length of the input
+          const slicedArray = curDisplayState.originalData.map((machine) => ({
+            ...machine,
+            searchId: slicedId(machine.id.toString()),
+          }));
 
-        return { ...curDisplayState, displayMachines: filteredArray };
-      } else
-        return {
-          ...curDisplayState,
-          displayMachines: curDisplayState.originalData,
-        };
+          const filteredArray = slicedArray.filter((machine) => {
+            return machine.searchId === stringedId;
+          });
+
+          return { ...curDisplayState, displayMachines: filteredArray };
+        } else console.log('in else block');
+      }
+      return {
+        ...curDisplayState,
+        displayMachines: curDisplayState.originalData,
+      };
     default:
       return curDisplayState;
   }
@@ -81,6 +84,10 @@ const Dashboard = () => {
     fetchDisplayData();
   }, []);
 
+  useEffect(() => {
+    console.log(JSON.stringify(displayState.displayMachines));
+  });
+
   const fetchDisplayData = () => {
     dispatchHttp({ type: 'SEND', loading: true, httpError: false });
     axios
@@ -88,7 +95,6 @@ const Dashboard = () => {
       .then((resp) => {
         dispatch({
           type: 'SET',
-          id: 0,
           displayMachines: resp.data,
           originalData: resp.data,
         });
@@ -107,6 +113,7 @@ const Dashboard = () => {
 
   const onSearchHandler = (searchContent: string): void => {
     const searchId = Number(searchContent);
+    console.log(searchId);
     dispatch({
       type: 'SEARCH',
       id: searchId,

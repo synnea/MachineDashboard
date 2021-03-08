@@ -22,12 +22,12 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
 
     case 'SEARCH':
       if (action.id) {
-        const stringedId = action.id.toString();
+        const stringActionId = action.id.toString();
 
-        if (stringedId !== '') {
+        if (stringActionId !== '') {
           // helper function to slice ID to appropriate length
-          const slicedId = (stringId: string) =>
-            stringId.slice(0, stringedId.length);
+          const slicedId = (slicedStringId: string) =>
+            slicedStringId.slice(0, stringActionId.length);
 
           // create a searchId and set it to the length of the input
           const slicedArray = curDisplayState.allMachines.map((machine) => ({
@@ -36,7 +36,7 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
           }));
 
           const filteredArray = slicedArray.filter((machine) => {
-            return machine.searchId === stringedId;
+            return machine.searchId === stringActionId;
           });
 
           return { ...curDisplayState, filteredMachines: filteredArray };

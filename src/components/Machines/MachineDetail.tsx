@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 import { useLocation } from 'react-router-dom';
 import { Machine } from '../../helpers/typesAndInterfaces';
@@ -13,6 +15,8 @@ const MachineDetail = () => {
   const [allMachineData, setAllMachineData] = useState<IMachineData>();
   const [detailMachine, setDetailMachine] = useState<IMachineData>();
   const [error, setError] = useState(false);
+  const [editMode, setEditMode] = useState(false);
+  const [enteredName, setNewName] = useState('');
 
   const location = useLocation();
   const pathname = location.pathname;
@@ -27,11 +31,16 @@ const MachineDetail = () => {
       return;
     } else {
       const machine = allMachineData.data.filter(
-        (machine) => machine.id === id
+        (machine) => machine.id === Number(id)
       );
       setDetailMachine({ data: machine });
     }
   }, [allMachineData]);
+
+  useEffect(() => {
+    if (editMode) {
+    }
+  }, [editMode]);
 
   const fetchMachineData = () => {
     axios
@@ -46,15 +55,55 @@ const MachineDetail = () => {
 
   let machine: Machine[] = [];
 
+  if (detailMachine) {
+    machine = detailMachine.data;
+  }
+
   let displayError = null;
 
   if (error) {
     displayError = <h2>Sorry, something went wrong</h2>;
   }
 
-  if (detailMachine) {
-    machine = detailMachine.data;
-  }
+  const onClickHandler = () => {
+    setEditMode(true);
+  };
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setNewName(e.target.value);
+  };
+
+  const onKeyPressHandler = (e: React.KeyboardEvent) => {
+    if (e.key == 'Enter') {
+      onSubmitHandler();
+    }
+  };
+
+  const onSubmitHandler = () => {
+    if (detailMachine) {
+      machine = detailMachine.data;
+      const newName = enteredName;
+      // axios
+      //   .put(`http://localhost:3000/${id}`, { ...machine, machine.name: newName })
+      //   .then((resp) => {
+      //     console.log(resp.data);
+      //   })
+      //   .catch((error) => {
+      //     console.log(error);
+      //   });
+    }
+  };
+
+  let button = (
+    <Button
+      variant="contained"
+      color="primary"
+      size="small"
+      onClick={onClickHandler}
+    >
+      Edit
+    </Button>
+  );
 
   return (
     <div className="detail-page">
@@ -69,7 +118,18 @@ const MachineDetail = () => {
                 ID:
                 {machine.id}
               </p>
-              <p>Machine: {machine.name}</p>
+              {editMode ? (
+                <TextField
+                  placeholder={machine.name}
+                  value={enteredName}
+                  onKeyPress={onKeyPressHandler}
+                  onChange={onChangeHandler}
+                ></TextField>
+              ) : (
+                <p id="name-field">
+                  {machine.name} {button}
+                </p>
+              )}
               <p>Type: {machine.type}</p>
             </div>
             <div className="machine-info location">

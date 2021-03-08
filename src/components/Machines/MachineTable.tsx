@@ -54,9 +54,8 @@ const MachineTable = (props: TableProps) => {
 
   const history = useHistory();
 
-  const rowClickHandler = (id: string) => {
-    const numId = Number(id);
-    history.push(`/${numId}`, { state: props.data });
+  const rowClickHandler = (id: number) => {
+    history.push(`/${id}`, { state: props.data });
   };
 
   const rows = props.data.map((machine) => {

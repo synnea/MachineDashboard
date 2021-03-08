@@ -23,18 +23,20 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
       };
 
     case 'SEARCH':
-      if (action.id.length !== 0) {
+      const stringId = action.id.toString();
+      if (stringId.length !== 0) {
         // helper function to slice ID to appropriate length
-        const slicedId = (id: string) => id.slice(0, action.id.length);
+        const slicedId = (stringId: string) =>
+          stringId.slice(0, stringId.length);
 
         // create a searchId and set it to the length of the input
         const slicedArray = curDisplayState.originalData.map((machine) => ({
           ...machine,
-          searchId: slicedId(machine.id),
+          searchId: slicedId(machine.id.toString()),
         }));
 
         const filteredArray = slicedArray.filter((machine) => {
-          return machine.searchId === action.id;
+          return machine.searchId === stringId;
         });
 
         return { ...curDisplayState, displayMachines: filteredArray };
@@ -86,7 +88,7 @@ const Dashboard = () => {
       .then((resp) => {
         dispatch({
           type: 'SET',
-          id: '',
+          id: 0,
           displayMachines: resp.data,
           originalData: resp.data,
         });
@@ -104,9 +106,10 @@ const Dashboard = () => {
   };
 
   const onSearchHandler = (searchContent: string): void => {
+    const searchId = Number(searchContent);
     dispatch({
       type: 'SEARCH',
-      id: searchContent,
+      id: searchId,
       displayMachines: displayState.displayMachines,
       originalData: displayState.originalData,
     });

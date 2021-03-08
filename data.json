@@ -1,7 +1,7 @@
 {
   "machines": [
     {
-      "id": "660324",
+      "id": 660324,
       "name": "NC-Drehen",
       "type": "MACH",
       "location": {
@@ -21,7 +21,7 @@
       }
     },
     {
-      "id": "660323",
+      "id": 660323,
       "name": "NC-Drehen-Bohren",
       "type": "MACH",
       "location": {
@@ -41,7 +41,7 @@
       }
     },
     {
-      "id": "458323",
+      "id": 458323,
       "name": "Entspannen",
       "type": "MEMV",
       "location": {
@@ -61,7 +61,7 @@
       }
     },
     {
-      "id": "660726",
+      "id": 660726,
       "name": "Profilschleifen",
       "type": "ABRA",
       "location": {
@@ -81,7 +81,7 @@
       }
     },
     {
-      "id": "660736",
+      "id": 660736,
       "name": "R&O Gruppe-Profilschleifen",
       "type": "ROG",
       "location": {
@@ -101,7 +101,7 @@
       }
     },
     {
-      "id": "458322",
+      "id": 458322,
       "name": "Härten",
       "type": "POST",
       "location": {
@@ -141,7 +141,7 @@
       }
     },
     {
-      "id": "660730",
+      "id": 660730,
       "name": "R&O Gruppe",
       "type": "ROG",
       "location": {
@@ -161,7 +161,7 @@
       }
     },
     {
-      "id": "660611",
+      "id": 660611,
       "name": "Drahterodieren",
       "type": "EDM",
       "location": {
@@ -181,7 +181,7 @@
       }
     },
     {
-      "id": "660425",
+      "id": 660425,
       "name": "NC-Fräsen",
       "type": "MACH",
       "location": {
@@ -201,7 +201,7 @@
       }
     },
     {
-      "id": "660430",
+      "id": 660430,
       "name": "HSC-Fräsen",
       "type": "MACH",
       "location": {
@@ -221,7 +221,7 @@
       }
     },
     {
-      "id": "660561",
+      "id": 660561,
       "name": "Schleifen Plan",
       "type": "ABRA",
       "location": {
@@ -241,7 +241,7 @@
       }
     },
     {
-      "id": "660541",
+      "id": 660541,
       "name": "Schleifen Spitz",
       "type": "ABRA",
       "location": {
@@ -261,7 +261,7 @@
       }
     },
     {
-      "id": "660523",
+      "id": 660523,
       "name": "Schleifen Rund",
       "type": "ABRA",
       "location": {
@@ -281,7 +281,7 @@
       }
     },
     {
-      "id": "660424",
+      "id": 660424,
       "name": "NC-Fräsen Klopp",
       "type": "MACH",
       "location": {
@@ -301,7 +301,7 @@
       }
     },
     {
-      "id": "660712",
+      "id": 660712,
       "name": "Schlossern-Montage",
       "type": "MACH",
       "location": {
@@ -321,7 +321,7 @@
       }
     },
     {
-      "id": "660214",
+      "id": 660214,
       "name": "Schlossern-Optimierung",
       "type": "MACH",
       "location": {
@@ -341,7 +341,7 @@
       }
     },
     {
-      "id": "660222",
+      "id": 660222,
       "name": "Schlossern (weich)",
       "type": "MACH",
       "location": {
@@ -361,7 +361,7 @@
       }
     },
     {
-      "id": "660711",
+      "id": 660711,
       "name": "Schlossern",
       "type": "MACH",
       "location": {
@@ -381,7 +381,7 @@
       }
     },
     {
-      "id": "660621",
+      "id": 660621,
       "name": "Senkerodieren",
       "type": "EDM",
       "location": {
@@ -401,7 +401,7 @@
       }
     },
     {
-      "id": "458311",
+      "id": 458311,
       "name": "Härten",
       "type": "POST",
       "location": {
@@ -421,7 +421,7 @@
       }
     },
     {
-      "id": "660731",
+      "id": 660731,
       "name": "R&O Räumnadelschleifen",
       "type": "ROG",
       "location": {
@@ -441,7 +441,7 @@
       }
     },
     {
-      "id": "660211",
+      "id": 660211,
       "name": "Schlossern",
       "type": "MACH",
       "location": {
@@ -461,7 +461,7 @@
       }
     },
     {
-      "id": "660220",
+      "id": 660220,
       "name": "Schlossern (polieren)",
       "type": "MACH",
       "location": {
@@ -481,7 +481,7 @@
       }
     },
     {
-      "id": "660221",
+      "id": 660221,
       "name": "Schlossern (hart)",
       "type": "MACH",
       "location": {
@@ -501,7 +501,7 @@
       }
     },
     {
-      "id": "660713",
+      "id": 660713,
       "name": "Schlossern-Montage",
       "type": "MACH",
       "location": {
@@ -521,7 +521,7 @@
       }
     },
     {
-      "id": "660920",
+      "id": 660920,
       "name": "Try Out Presse",
       "type": "DEMO",
       "location": {
@@ -541,7 +541,7 @@
       }
     },
     {
-      "id": "660422",
+      "id": 660422,
       "name": "NC-Fräsen",
       "type": "MACH",
       "location": {
@@ -561,7 +561,7 @@
       }
     },
     {
-      "id": "458312",
+      "id": 458312,
       "name": "Härten",
       "type": "POST",
       "location": {
@@ -581,7 +581,7 @@
       }
     },
     {
-      "id": "660312",
+      "id": 660312,
       "name": "Drehen konv.",
       "type": "MACH",
       "location": {
@@ -601,7 +601,7 @@
       }
     },
     {
-      "id": "458321",
+      "id": 458321,
       "name": "Härten",
       "type": "POST",
       "location": {
@@ -621,7 +621,7 @@
       }
     },
     {
-      "id": "660531",
+      "id": 660531,
       "name": "Profilschleifen",
       "type": "ABRA",
       "location": {
@@ -641,7 +641,7 @@
       }
     },
     {
-      "id": "458324",
+      "id": 458324,
       "name": "Nitrieren",
       "type": "POST",
       "location": {
@@ -661,7 +661,7 @@
       }
     },
     {
-      "id": "660951",
+      "id": 660951,
       "name": "Beschichten",
       "type": "POST",
       "location": {
@@ -681,7 +681,7 @@
       }
     },
     {
-      "id": "670210",
+      "id": 670210,
       "name": "Sägen Werk2",
       "type": "MACH",
       "location": {
@@ -701,7 +701,7 @@
       }
     },
     {
-      "id": "660735",
+      "id": 660735,
       "name": "R&O Gruppe",
       "type": "ROG",
       "location": {
@@ -721,7 +721,7 @@
       }
     },
     {
-      "id": "660742",
+      "id": 660742,
       "name": "KO-Schleifen",
       "type": "ABRA",
       "location": {
@@ -741,7 +741,7 @@
       }
     },
     {
-      "id": "660314",
+      "id": 660314,
       "name": "NC-Bearb. GROB",
       "type": "MACH",
       "location": {
@@ -761,7 +761,7 @@
       }
     },
     {
-      "id": "660313",
+      "id": 660313,
       "name": "NC-Drehen",
       "type": "MACH",
       "location": {
@@ -781,7 +781,7 @@
       }
     },
     {
-      "id": "660412",
+      "id": 660412,
       "name": "Fräsen konventionell AZUBI",
       "type": "MACH",
       "location": {
@@ -801,7 +801,7 @@
       }
     },
     {
-      "id": "660741",
+      "id": 660741,
       "name": "KO-Schleifen",
       "type": "ABRA",
       "location": {
@@ -821,7 +821,7 @@
       }
     },
     {
-      "id": "660411",
+      "id": 660411,
       "name": "Fräsen Uni",
       "type": "MACH",
       "location": {
@@ -841,7 +841,7 @@
       }
     },
     {
-      "id": "660532",
+      "id": 660532,
       "name": "Schleifen Plan",
       "type": "ABRA",
       "location": {
@@ -861,7 +861,7 @@
       }
     },
     {
-      "id": "660213",
+      "id": 660213,
       "name": "Schlossern-Montage",
       "type": "MACH",
       "location": {
@@ -881,7 +881,7 @@
       }
     },
     {
-      "id": "458000",
+      "id": 458000,
       "name": "Härten",
       "type": "POST",
       "location": {
@@ -901,7 +901,7 @@
       }
     },
     {
-      "id": "660542",
+      "id": 660542,
       "name": "Schleifen Rund",
       "type": "ABRA",
       "location": {
@@ -921,7 +921,7 @@
       }
     },
     {
-      "id": "660210",
+      "id": 660210,
       "name": "Schlossern (polieren)",
       "type": "MACH",
       "location": {
@@ -941,7 +941,7 @@
       }
     },
     {
-      "id": "660828",
+      "id": 660828,
       "name": "Abliefern",
       "type": "FINA",
       "location": {
@@ -958,7 +958,7 @@
       }
     },
     {
-      "id": "660153",
+      "id": 660153,
       "name": "Änderung",
       "type": "OTHE",
       "location": {
@@ -975,7 +975,7 @@
       }
     },
     {
-      "id": "660160",
+      "id": 660160,
       "name": "Anforderung Prüfmittel",
       "type": "PRE",
       "location": {
@@ -992,7 +992,7 @@
       }
     },
     {
-      "id": "53330",
+      "id": 53330,
       "name": "AV / Projektierung",
       "type": "OTHE",
       "location": {
@@ -1009,7 +1009,7 @@
       }
     },
     {
-      "id": "660762",
+      "id": 660762,
       "name": "Beschriften",
       "type": "POST",
       "location": {
@@ -1026,7 +1026,7 @@
       }
     },
     {
-      "id": "660714",
+      "id": 660714,
       "name": "Elektro/Pneumatikplan erstellen",
       "type": "PRE",
       "location": {
@@ -1043,7 +1043,7 @@
       }
     },
     {
-      "id": "660152",
+      "id": 660152,
       "name": "Entnahme",
       "type": "FINA",
       "location": {
@@ -1060,7 +1060,7 @@
       }
     },
     {
-      "id": "660810",
+      "id": 660810,
       "name": "Kontrolle",
       "type": "POST",
       "location": {
@@ -1077,7 +1077,7 @@
       }
     },
     {
-      "id": "660151",
+      "id": 660151,
       "name": "Mat. Bestellen",
       "type": "OTHE",
       "location": {
@@ -1094,7 +1094,7 @@
       }
     },
     {
-      "id": "53200",
+      "id": 53200,
       "name": "Prod. AV",
       "type": "OTHE",
       "location": {
@@ -1111,7 +1111,7 @@
       }
     },
     {
-      "id": "660155",
+      "id": 660155,
       "name": "WZ Lieferung",
       "type": "PRE",
       "location": {

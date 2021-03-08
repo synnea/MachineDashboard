@@ -1,5 +1,5 @@
 export interface Machine {
-  id: string;
+  id: number;
   searchId: string;
   name: string;
   type: string;
@@ -21,7 +21,7 @@ export interface Machine {
 }
 
 export interface Row {
-  id: string;
+  id: number;
   name: string;
   current_consumption: number;
   current_consumption_unit: string;
@@ -43,7 +43,7 @@ export type Action = {
   type: string;
   displayMachines: Machine[];
   originalData: Machine[];
-  id: string;
+  id: number;
 };
 
 export type httpAction = {

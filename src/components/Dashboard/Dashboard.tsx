@@ -28,13 +28,12 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
         const slicedId = (id: string) => id.slice(0, action.id.length);
 
         // create a searchId and set it to the length of the input
-        const array = curDisplayState.originalData.map((machine) => ({
+        const slicedArray = curDisplayState.originalData.map((machine) => ({
           ...machine,
           searchId: slicedId(machine.id),
         }));
 
-        // filter array, matching input to searchId
-        const filteredArray = array.filter((machine) => {
+        const filteredArray = slicedArray.filter((machine) => {
           return machine.searchId === action.id;
         });
 

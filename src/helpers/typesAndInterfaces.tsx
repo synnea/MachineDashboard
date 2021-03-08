@@ -2,6 +2,7 @@ export interface Machine {
   id: string;
   searchId: string;
   name: string;
+  type: string;
   location: {
     lat: number;
     lon: number;

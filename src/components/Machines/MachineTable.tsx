@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import DataTable from 'react-data-table-component';
 
 import './MachineTable.css';
@@ -51,8 +52,11 @@ const MachineTable = (props: TableProps) => {
     },
   ];
 
+  const history = useHistory();
+
   const rowClickHandler = (id: string) => {
-    alert(id);
+    const numId = Number(id);
+    history.push(`/${numId}`, { state: props.data });
   };
 
   const rows = props.data.map((machine) => {

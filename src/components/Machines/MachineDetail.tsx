@@ -27,9 +27,8 @@ const MachineDetail = () => {
   }, []);
 
   useEffect(() => {
-    if (!allMachineData) {
-      return;
-    } else {
+    if (!allMachineData) return;
+    else {
       const machine = allMachineData.data.filter(
         (machine) => machine.id === Number(id)
       );
@@ -82,9 +81,14 @@ const MachineDetail = () => {
   const onSubmitHandler = () => {
     if (detailMachine) {
       machine = detailMachine.data;
+      const numId = Number(id);
       const newName = enteredName;
+      console.log(enteredName);
       // axios
-      //   .put(`http://localhost:3000/${id}`, { ...machine, machine.name: newName })
+      //   .put(`http://localhost:3001/machines/${numId}`, {
+      //     ...machine,
+      //     enteredName,
+      //   })
       //   .then((resp) => {
       //     console.log(resp.data);
       //   })

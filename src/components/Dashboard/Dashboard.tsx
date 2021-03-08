@@ -42,7 +42,7 @@ const displayReducer = (curDisplayState: State, action: Action): any => {
           });
 
           return { ...curDisplayState, displayMachines: filteredArray };
-        } else console.log('in else block');
+        }
       }
       return {
         ...curDisplayState,
@@ -84,10 +84,6 @@ const Dashboard = () => {
     fetchDisplayData();
   }, []);
 
-  useEffect(() => {
-    console.log(JSON.stringify(displayState.displayMachines));
-  });
-
   const fetchDisplayData = () => {
     dispatchHttp({ type: 'SEND', loading: true, httpError: false });
     axios
@@ -113,7 +109,6 @@ const Dashboard = () => {
 
   const onSearchHandler = (searchContent: string): void => {
     const searchId = Number(searchContent);
-    console.log(searchId);
     dispatch({
       type: 'SEARCH',
       id: searchId,
